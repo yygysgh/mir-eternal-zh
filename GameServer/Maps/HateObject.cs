@@ -15,7 +15,7 @@ namespace GameServer.Maps
 		}
 
 		
-		public bool 移除仇恨(MapObject 对象)
+		public bool RemoveHate(MapObject 对象)
 		{
 			if (this.当前目标 == 对象)
 			{

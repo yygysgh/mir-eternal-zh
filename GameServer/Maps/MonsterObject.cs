@@ -1071,19 +1071,19 @@ namespace GameServer.Maps
             }
             else if (this.HateObject.当前目标.Died)
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (!this.Neighbors.Contains(this.HateObject.当前目标))
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (!this.HateObject.仇恨列表.ContainsKey(this.HateObject.当前目标))
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (base.GetDistance(this.HateObject.当前目标) > this.RangeHate && MainProcess.CurrentTime > this.HateObject.仇恨列表[this.HateObject.当前目标].仇恨时间)
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (base.GetDistance(this.HateObject.当前目标) <= this.RangeHate)
             {
@@ -1109,19 +1109,19 @@ namespace GameServer.Maps
             }
             else if (this.HateObject.当前目标.Died)
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (!this.Neighbors.Contains(this.HateObject.当前目标))
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (!this.HateObject.仇恨列表.ContainsKey(this.HateObject.当前目标))
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (base.GetDistance(this.HateObject.当前目标) > this.RangeHate && MainProcess.CurrentTime > this.HateObject.仇恨列表[this.HateObject.当前目标].仇恨时间)
             {
-                this.HateObject.移除仇恨(this.HateObject.当前目标);
+                this.HateObject.RemoveHate(this.HateObject.当前目标);
             }
             else if (base.GetDistance(this.HateObject.当前目标) <= this.RangeHate)
             {
@@ -1153,11 +1153,11 @@ namespace GameServer.Maps
                     {
                         this.HateObject.添加仇恨(PetObject.PlayerOwner, keyValuePair.Value.仇恨时间, keyValuePair.Value.仇恨Value);
                     }
-                    this.HateObject.移除仇恨(keyValuePair.Key);
+                    this.HateObject.RemoveHate(keyValuePair.Key);
                 }
                 else if (!(keyValuePair.Key is PlayerObject))
                 {
-                    this.HateObject.移除仇恨(keyValuePair.Key);
+                    this.HateObject.RemoveHate(keyValuePair.Key);
                 }
             }
             MapObject MapObject = (from x in this.HateObject.仇恨列表.Keys.ToList<MapObject>()
